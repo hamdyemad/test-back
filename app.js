@@ -1,6 +1,7 @@
 const app = require('express')();
 const server = require('http').createServer(app)
-const io = require('socket.io')(server);
+const io = require('socket.io')(server, { path: '/chat/socket.io', cors: { origin: 'http://localhost:4200' } });
+const path = require('path');
 
 io.on('connection', (socket) => {
     console.log('new user')

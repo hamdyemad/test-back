@@ -13,21 +13,21 @@
     <button onclick="send()">send message</button>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const socket = io();
+        const socket = io('http://localhost:3000/name', { path: '/chat/socket.io' });
         socket.on('connect', () => {
             console.log('hello mido')
         })
 
-        socket.on('newMsg', () => {
-            console.log('msg recieved')
-        })
+        // socket.on('newMsg', () => {
+        //     console.log('msg recieved')
+        // })
 
-        function join() {
-            socket.emit('joinGroup')
-        }
-        function send() {
-            socket.emit('sendMsg')
-        }
+        // function join() {
+        //     socket.emit('joinGroup')
+        // }
+        // function send() {
+        //     socket.emit('sendMsg')
+        // }
 
     </script>
 </body>
